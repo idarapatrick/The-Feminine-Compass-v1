@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "the-feminine-compass-v1"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "the-feminine-compass-v1-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

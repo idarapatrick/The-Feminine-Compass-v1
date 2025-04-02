@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f7;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-1 {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-1.jpeg");
+}
+
+.slide-2 {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-2(I).jpeg");
+}
+
+.slide-3 {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-3.jpeg");
+}
+
+.slide-content {
+    padding: 40px 5% 120px;
+    color: white;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide-title {
+    font-size: clamp(24px, 5vw, 48px);
+    margin-bottom: clamp(10px, 2vw, 20px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.slide-subtitle {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: clamp(14px, 2vw, 20px) clamp(20px, 3vw, 30px);
+    width: 100%;
+    max-width: 400px;
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #6a1eae;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: clamp(70px, 15%, 100px);
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* Auth Modal Styles */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-modal.active {
+    display: flex;
+}
+
+.auth-container {
+    background-color: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.auth-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #777;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+}
+
+.auth-tab {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+    cursor: pointer;
+    position: relative;
+}
+
+.auth-tab.active {
+    color: #7b2cbf;
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7b2cbf;
+}
+
+.auth-content {
+    display: none;
+}
+
+.auth-content.active {
+    display: block;
+}
+
+.auth-button {
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #6a1eae;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .slide-content {
+        padding-bottom: 100px;
+    }
+    
+    .button {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .slide-content {
+        padding-bottom: 150px;
+    }
+}

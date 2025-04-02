@@ -1,0 +1,119 @@
+<!-- resources.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Resources - The Feminine Compass</title>
+    <link rel="stylesheet" href="/src/css/resources.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Feminine Compass</h1>
+        </div>
+        <button class="mobile-sidebar-toggle">☰</button>
+         <!-- Sidebar Navigation -->
+         <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Feminine Compass</h2>
+            </div>
+            
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                li><a href="settings.html"><span class="icon">👤</span> Settings</a></li>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="resource-container">
+            <h2 class="resource-header">Women's Health Articles & Guides</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <h3><a href="https://www.mariongluckclinic.com/blog/understanding-menstrual-cycle.html">Understanding Your Menstrual Cycles</a></h3>
+                    <p>Learn the phases of the menstrual cycle and how they impact health.</p>
+                </div>
+                <div class="resource-card">
+                    <h3><a href="https://www.mariongluckclinic.com/blog/can-you-have-pcos-and-endometriosis.html">Can You Have PCOS and Endometriosis?</a></h3>
+                    <p>There are all sorts of hormonal issues which can affect your cycle and your overall health. </p>
+                </div>
+                <div class="resource-card">
+                    <h3><a href="https://www.health.harvard.edu/cancer/boosting-breast-cancer-survival">Boosting Breast Cancer Survival</a></h3>
+                    <p>Learn science-backed ways to enhance survival and reduce the odds of recurrence.</p>
+                </div>
+                <div class="resource-card">
+                    <h3><a href="https://www.health.harvard.edu/womens-health/fibroids-not-just-a-young-womans-problem">Fibroids: Not just a young woman's problem</a></h3>
+                    <p>These uterine growths can crop up even as menopause looms and beyond.</p>
+                </div>
+                <div class="resource-card">
+                    <h3><a href="https://www.health.harvard.edu/womens-health/urinary-tract-infection-in-women-a-to-z">Urinary tract infection in women</a></h3>
+                    <p>A urinary tract infection is an infection involving the organs that produce urine and carry it out of the body.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+             // Ensure sidebar is always visible on larger screens
+            window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.remove('active');
+            } else {
+            sidebar.classList.add('hidden');
+            }
+    });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

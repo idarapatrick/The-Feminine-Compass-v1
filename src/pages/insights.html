@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Health Insights</title>
+    <link rel="stylesheet" href="/src/css/insights.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <button class="mobile-sidebar-toggle">☰</button>
+         <!-- Sidebar Navigation -->
+         <nav class="sidebar" id="sidebar">           
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                <li><a href="settings.html"><span class="icon">📝</span> Settings</a></li>
+            </div>
+        </nav>
+        <div class="user-menu">
+            <span class="notification-icon"><i class="fas fa-bell"></i></span>
+            <div class="user-avatar">
+                <img src="/assets/images/profile-avatar(1).jpg" alt="User Avatar">
+            </div>
+        </div>
+    </header>
+
+    <main class="insights-container">
+        <section class="insights-header">
+            <h2>Your Health Insights</h2>
+            <p>AI-powered analysis based on your health tracking data.</p>
+            <div class="date-range-selector">
+                <label for="date-range">Time Period:</label>
+                <select id="date-range">
+                    <option value="3months">Last 3 Months</option>
+                    <option value="6months" selected>Last 6 Months</option>
+                    <option value="1year">Last Year</option>
+                    <option value="all">All Time</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="insights-alert">
+            <div class="alert-card">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alert-content">
+                    <h3>Important Health Update</h3>
+                    <p>Our AI has detected patterns that may indicate irregular cycle lengths. Consider discussing these patterns with your healthcare provider.</p>
+                    <div class="alert-actions">
+                        <button class="primary-btn">Learn More</button>
+                        <button class="secondary-btn">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-metrics">
+            <h3>Key Metrics</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h4>Cycle Length</h4>
+                    <div class="metric-value">28.3 <span class="unit">days</span></div>
+                    <div class="metric-trend positive">
+                        <i class="fas fa-check-circle"></i> Consistent
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <h4>Period Length</h4>
+                    <div class="metric-value">5.2 <span class="unit">days</span></div>
+                    <div class="metric-trend negative">
+                        <i class="fas fa-arrow-up"></i> +0.5 days
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <h4>Cycle Regularity</h4>
+                    <div class="metric-value">92<span class="unit">%</span></div>
+                    <div class="metric-trend warning">
+                        <i class="fas fa-arrow-down"></i> -3%
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <h4>Tracking Consistency</h4>
+                    <div class="metric-value">87<span class="unit">%</span></div>
+                    <div class="metric-trend positive">
+                        <i class="fas fa-arrow-up"></i> +5%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <div class="visualization-header">
+                <h3>Cycle Patterns</h3>
+                <div class="visualization-controls">
+                    <button class="viz-control active" data-chart="cycleLength">Cycle Length</button>
+                    <button class="viz-control" data-chart="periodLength">Period Length</button>
+                    <button class="viz-control" data-chart="symptoms">Symptoms</button>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="cycleChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item">
+                    <span class="legend-color cycle-length"></span>
+                    <span>Cycle Length</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color avg-line"></span>
+                    <span>Your Average</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color typical-range"></span>
+                    <span>Typical Range</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="symptoms-patterns">
+            <h3>Symptom Patterns</h3>
+            <div class="symptom-heatmap">
+                <div class="heatmap-scale">
+                    <span>Cycle Day:</span>
+                    <div class="scale-days">
+                        <span>1</span>
+                        <span>7</span>
+                        <span>14</span>
+                        <span>21</span>
+                        <span>28</span>
+                    </div>
+                </div>
+                <div class="heatmap-row">
+                    <div class="symptom-name">Cramps</div>
+                    <div class="heatmap-cells">
+                        <div class="cell high"></div>
+                        <div class="cell high"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell low"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell high"></div>
+                        <div class="cell high"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                    </div>
+                </div>
+                <div class="heatmap-row">
+                    <div class="symptom-name">Headache</div>
+                    <div class="heatmap-cells">
+                        <div class="cell medium"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell low"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell high"></div>
+                        <div class="cell high"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell low"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                    </div>
+                </div>
+                <div class="heatmap-row">
+                    <div class="symptom-name">Bloating</div>
+                    <div class="heatmap-cells">
+                        <div class="cell medium"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell low"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell high"></div>
+                        <div class="cell high"></div>
+                        <div class="cell high"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell medium"></div>
+                        <div class="cell low"></div>
+                        <div class="cell low"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                        <div class="cell none"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="heatmap-legend">
+                <div class="legend-item">
+                    <span class="legend-color none"></span>
+                    <span>None</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color low"></span>
+                    <span>Low</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color medium"></span>
+                    <span>Medium</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color high"></span>
+                    <span>High</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-insights">
+            <h3>AI-Generated Insights</h3>
+            <div class="insight-cards">
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon"><i class="fas fa-brain"></i></div>
+                        <h4>Pattern Analysis</h4>
+                    </div>
+                    <div class="insight-content">
+                        <p>Your cycle shows consistent pre-menstrual symptoms starting 5-7 days before your period. Headaches are most frequent 2 days before your period starts.</p>
+                        <div class="recommendation">
+                            <h5>Recommendation</h5>
+                            <p>Consider preventive pain management 2-3 days before your expected period start date.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>Trend Detection</h4>
+                    </div>
+                    <div class="insight-content">
+                        <p>Your cycle length has varied between 26-30 days in the past 6 months, with a slight trend toward longer cycles in the last 2 months.</p>
+                        <div class="recommendation">
+                            <h5>Recommendation</h5>
+                            <p>Continue consistent tracking to monitor this trend. Cycle length variations within this range are typically normal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="insight-card warning">
+                    <div class="insight-header">
+                        <div class="insight-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <h4>Potential Concern</h4>
+                    </div>
+                    <div class="insight-content">
+                        <p>Increased period length and cramping intensity may warrant attention. These patterns could be associated with various conditions including endometriosis.</p>
+                        <div class="recommendation">
+                            <h5>Recommendation</h5>
+                            <p>Consider discussing these symptoms with your healthcare provider at your next appointment.</p>
+                            <button class="primary-btn">Find a Specialist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="correlation-analysis">
+            <h3>Health Correlations</h3>
+            <p class="section-description">Our AI has identified these potential correlations in your health data:</p>
+            <div class="correlation-grid">
+                <div class="correlation-card">
+                    <div class="correlation-header">
+                        <h4>Sleep & Mood</h4>
+                        <div class="correlation-strength high">Strong</div>
+                    </div>
+                    <p>On days with less than 7 hours of sleep, you report lower mood scores 78% of the time.</p>
+                </div>
+                <div class="correlation-card">
+                    <div class="correlation-header">
+                        <h4>Exercise & Cramps</h4>
+                        <div class="correlation-strength medium">Moderate</div>
+                    </div>
+                    <p>Regular exercise (3+ times/week) correlates with reduced cramping severity during your period.</p>
+                </div>
+                <div class="correlation-card">
+                    <div class="correlation-header">
+                        <h4>Stress & Cycle Length</h4>
+                        <div class="correlation-strength low">Potential</div>
+                    </div>
+                    <p>Higher reported stress levels may be associated with slightly delayed periods (1-2 days).</p>
+                </div>
+                <div class="correlation-card">
+                    <div class="correlation-header">
+                        <h4>Diet & Bloating</h4>
+                        <div class="correlation-strength medium">Moderate</div>
+                    </div>
+                    <p>Days with high salt intake show increased bloating reports, especially during luteal phase.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="prediction-section">
+            <h3>Predictions & Forecasts</h3>
+            <div class="prediction-cards">
+                <div class="prediction-card">
+                    <h4>Next Three Cycles</h4>
+                    <table class="prediction-table">
+                        <thead>
+                            <tr>
+                                <th>Cycle</th>
+                                <th>Predicted Start</th>
+                                <th>Expected Length</th>
+                                <th>Confidence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Next</td>
+                                <td>Apr 3, 2025</td>
+                                <td>28 days</td>
+                                <td><div class="confidence-bar high"></div> 95%</td>
+                            </tr>
+                            <tr>
+                                <td>+1</td>
+                                <td>May 1, 2025</td>
+                                <td>28 days</td>
+                                <td><div class="confidence-bar medium"></div> 85%</td>
+                            </tr>
+                            <tr>
+                                <td>+2</td>
+                                <td>May 29, 2025</td>
+                                <td>29 days</td>
+                                <td><div class="confidence-bar low"></div> 70%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="prediction-card">
+                    <h4>Symptom Forecast</h4>
+                    <div class="symptom-prediction">
+                        <div class="symptom-timeline">
+                            <div class="timeline-day">Apr 1</div>
+                            <div class="timeline-day today">Apr 2</div>
+                            <div class="timeline-day">Apr 3</div>
+                            <div class="timeline-day">Apr 4</div>
+                            <div class="timeline-day">Apr 5</div>
+                            <div class="timeline-day">Apr 6</div>
+                            <div class="timeline-day">Apr 7</div>
+                        </div>
+                        <div class="symptom-forecast-row">
+                            <div class="symptom-label">Cramps</div>
+                            <div class="forecast-levels">
+                                <div class="forecast-level none"></div>
+                                <div class="forecast-level none"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level high"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level low"></div>
+                            </div>
+                        </div>
+                        <div class="symptom-forecast-row">
+                            <div class="symptom-label">Headache</div>
+                            <div class="forecast-levels">
+                                <div class="forecast-level none"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level high"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level none"></div>
+                            </div>
+                        </div>
+                        <div class="symptom-forecast-row">
+                            <div class="symptom-label">Energy</div>
+                            <div class="forecast-levels">
+                                <div class="forecast-level high"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level low"></div>
+                                <div class="forecast-level medium"></div>
+                                <div class="forecast-level medium"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for chart
+        const cycleData = {
+            labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+            datasets: [
+                {
+                    label: 'Cycle Length',
+                    data: [27, 28, 29, 28, 30, 28],
+                    backgroundColor: 'rgba(139, 0, 139, 0.2)',
+                    borderColor: 'rgba(139, 0, 139, 1)',
+                    borderWidth: 2,
+                    tension: 0.3
+                },
+                {
+                    label: 'Average',
+                    data: [28, 28, 28, 28, 28, 28],
+                    borderColor: 'rgba(70, 130, 180, 0.8)',
+                    borderWidth: 2,
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                }
+            ]
+        };
+
+        // Initialize chart
+        const ctx = document.getElementById('cycleChart').getContext('2d');
+        const cycleChart = new Chart(ctx, {
+            type: 'line',
+            data: cycleData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 20,
+                        max: 40,
+                        title: {
+                            display: true,
+                            text: 'Days'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Chart type switcher
+        document.querySelectorAll('.viz-control').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.viz-control').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                console.log(`Selected chart: ${this.dataset.chart}`);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+             // Ensure sidebar is always visible on larger screens
+            window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.remove('active');
+            } else {
+            sidebar.classList.add('hidden');
+            }
+            });
+        });
+        
+    </script>
+</body>
+</html>

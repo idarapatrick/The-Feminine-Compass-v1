@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Dashboard</title>
+    <link rel="stylesheet" href="/src/css/dashboard.css">
+    <link rel="stylesheet" href="/src/css/components.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Feminine Compass</h2>
+            </div>
+            
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                <li><a href="settings.html"><span class="icon">📝</span> Settings</a></li>
+            </div>
+
+            <div class="logout">
+                <button id="logout-btn"><span class="icon">🚪</span> Logout</button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <!-- Header with User Info and Notifications -->
+            <header class="dashboard-header">
+                <div class="user-greeting">
+                    <button class="mobile-sidebar-toggle" id="mobile-sidebar-toggle">☰</button>
+                    <div class="profile-info">
+                        <div class="profile-picture">
+                            <img src="/assets/images/profile-avatar(1).jpg" alt="User Profile Picture" id="profile-picture">
+                        </div>
+                        <h1>Hello, <span id="user-first-name">User</span>!</h1>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <button id="notifications-btn" class="icon-btn">🔔</button>
+                        <span class="notification-badge" id="notification-count">3</span>
+                        <div class="notification-dropdown" id="notification-dropdown">
+                            <div class="notification-list" id="notification-list">
+                                <!-- Notifications will be added here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <button id="user-menu-btn" class="icon-btn">👤</button>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <ul>
+                                <li><a href="profile.html">My Profile</a></li>
+                                <li><a href="settings.html">Settings</a></li>
+                                <li><button id="logout-menu-btn">Logout</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Calendar/Cycle Tracker Widget -->
+                <div class="widget" id="cycle-widget">
+                    <h2 class="widget-title">
+                        <div class="widget-icon">
+                            <img src="/assets/images/emoji_5.png" alt="Cycle Icon" onerror="this.src='/assets/images/default-icon.png'">
+                        </div>
+                        Your Cycle
+                    </h2>
+                    <div class="widget-content">
+                        <div class="cycle-summary">
+                            <div class="cycle-info">
+                                <p>Current Day: <span>April 1</span></p>
+                                <p>Next Period: <span>April 14</span></p>
+                                <p>Next Fertile Window: <span>April 27</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Health Metrics Widget -->
+                <div class="widget" id="health-widget">
+                    <h2 class="widget-title">
+                        <div class="widget-icon">
+                            <img src="/assets/images/emoji_1.png" alt="Health Icon" onerror="this.src='/assets/images/default-icon.png'">
+                        </div>
+                        Recent Health
+                    </h2>
+                    <div class="widget-content">
+                        <div class="metrics-summary">
+                            <div class="metric-item">
+                                <div class="metric-label">Sleep</div>
+                                <div class="metric-value">7 hrs</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">Steps</div>
+                                <div class="metric-value">1258/5000</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">Calories Burnt</div>
+                                <div class="metric-value">230 Cal</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-label">Water Intake</div>
+                                <div class="metric-value">200/1500 ml</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights Widget -->
+                <div class="widget" id="insights-widget">
+                    <h2 class="widget-title">
+                        <div class="widget-icon">
+                            <img src="/assets/images/insights.png" alt="Insights Icon" onerror="this.src='/assets/images/default-icon.png'">
+                        </div>
+                        Health Insights
+                    </h2>
+                    <div class="widget-content">
+                        <div class="insights-list" id="insights-list">
+                            <!-- Insights will be added here -->
+                            <div class="insight-item">
+                                <p class="insight-title">Sleep patterns improving</p>
+                                <p class="insight-desc">Your sleep has been more consistent this week.</p>
+                            </div>
+                            <div class="insight-item">
+                                <p class="insight-title">Mood correlation</p>
+                                <p class="insight-desc">Better mood on days with 7+ hours of sleep.</p>
+                            </div>
+                        </div>
+                        <a href="insights.html" class="btn">View All Insights</a>
+                    </div>
+                </div>
+
+                <!-- Resource Widget -->
+                <div class="widget" id="resource-widget">
+                    <h2 class="widget-title">
+                        <div class="widget-icon">
+                            <img src="/assets/images/emoji_3.png" alt="Resources Icon" onerror="this.src='/assets/images/default-icon.png'">
+                        </div>
+                        Recommended Resources
+                    </h2>
+                    <div class="widget-content">
+                        <div class="resource-list" id="resource-list">
+                            <!-- Resources will be added here -->
+                            <div class="resource-article">
+                                <div class="article-image">
+                                    <img src="/assets/images/pregnancy-article.jpg" alt="Article Image" onerror="this.src='/assets/images/default-article.jpg'">
+                                </div>
+                                <div class="article-content">
+                                    <div class="article-source">WebMD</div>
+                                    <h3 class="article-title">Geriatric Pregnancy: Pregnancy After 35</h3>
+                                    <div class="article-author">Shawna Seed</div>
+                                    <div class="article-date">MAR 21</div>
+                                </div>
+                            </div>
+                            <div class="resource-article">
+                                <div class="article-image">
+                                    <img src="/assets/images/image-carousel-3.jpeg" alt="Article Image" onerror="this.src='/assets/images/default-article.jpg'">
+                                </div>
+                                <div class="article-content">
+                                    <div class="article-source">HealthLine</div>
+                                    <h3 class="article-title">Nutrition During Pregnancy</h3>
+                                    <div class="article-author">Lisa Smith</div>
+                                    <div class="article-date">MAR 15</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="resources.html" class="btn">Browse Library</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compassk</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/src/js/firebase.js"></script>
+    <script src="/src/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Settings - The Feminine Compass</title>
+    <link rel="stylesheet" href="/src/css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <button class="mobile-sidebar-toggle">☰</button>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">           
+            <div class="nav-links">
+                <li><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                <li class="active"><a href="settings.html"><span class="icon">⚙️</span> Settings</a></li>
+            </div>
+        </nav>
+        <div class="user-menu">
+            <span class="notification-icon"><i class="fas fa-bell"></i></span>
+            <div class="user-avatar">
+                <img src="/assets/images/profile-avatar(1).jpg" alt="User Avatar">
+            </div>
+        </div>
+    </header>
+
+    <main class="settings-container">
+        <div class="page-header">
+            <h1>Account Settings</h1>
+            <p>Manage your account security and preferences</p>
+        </div>
+
+        <div class="settings-wrapper">
+            <!-- Settings Navigation -->
+            <div class="settings-nav">
+                <ul>
+                    <li class="active" data-tab="security"><i class="fas fa-lock"></i> Security</li>
+                    <li data-tab="notifications"><i class="fas fa-bell"></i> Notifications</li>
+                    <li data-tab="privacy"><i class="fas fa-user-shield"></i> Privacy</li>
+                    <li data-tab="data"><i class="fas fa-database"></i> Data Management</li>
+                    <li data-tab="account"><i class="fas fa-user-cog"></i> Account Actions</li>
+                </ul>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-content">
+                <!-- Security Tab -->
+                <div class="settings-tab active" id="security">
+                    <h2>Security Settings</h2>
+                    
+                    <div class="settings-card">
+                        <h3>Change Password</h3>
+                        <form class="settings-form" id="password-form">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password" required>
+                                <div class="password-strength">
+                                    <div class="strength-meter"></div>
+                                    <span class="strength-text">Password strength</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Two-Factor Authentication</h3>
+                        <p>Add an extra layer of security to your account</p>
+                        <div class="toggle-container">
+                            <span>Enable 2FA</span>
+                            <label class="toggle">
+                                <input type="checkbox" id="two-factor">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="two-factor-setup hidden">
+                            <p>Scan the QR code with your authenticator app:</p>
+                            <div class="qr-placeholder">
+                                <img src="/api/placeholder/150/150" alt="QR Code Placeholder">
+                            </div>
+                            <div class="form-group">
+                                <label for="auth-code">Enter the 6-digit code:</label>
+                                <input type="text" id="auth-code" maxlength="6">
+                            </div>
+                            <button class="btn btn-primary">Verify</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Active Sessions</h3>
+                        <p>Manage devices where you're currently logged in</p>
+                        <div class="sessions-list">
+                            <div class="session-item">
+                                <div class="session-info">
+                                    <i class="fas fa-laptop"></i>
+                                    <div>
+                                        <h4>Windows PC - Chrome</h4>
+                                        <p>Current device • Active now</p>
+                                    </div>
+                                </div>
+                                <span class="session-tag">Current</span>
+                            </div>
+                            <div class="session-item">
+                                <div class="session-info">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <h4>iPhone - Safari</h4>
+                                        <p>Last active: Yesterday at 8:45 PM</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-small btn-outline">Log out</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-danger">Log out of all devices</button>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div class="settings-tab" id="notifications">
+                    <h2>Notification Preferences</h2>
+                    
+                    <div class="settings-card">
+                        <h3>Email Notifications</h3>
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Health Reminders</h4>
+                                    <p>Receive reminders about tracking your symptoms</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Cycle Predictions</h4>
+                                    <p>Get notified about upcoming cycle dates</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Community Updates</h4>
+                                    <p>Notifications about replies to your posts</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Newsletter</h4>
+                                    <p>Monthly newsletter with health tips and updates</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>In-App Notifications</h3>
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Health Insights</h4>
+                                    <p>Notifications about new health insights</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Community Activity</h4>
+                                    <p>Notifications about likes and replies</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Resource Updates</h4>
+                                    <p>Notifications about new resources</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Tab -->
+                <div class="settings-tab" id="privacy">
+                    <h2>Privacy Settings</h2>
+                    
+                    <div class="settings-card">
+                        <h3>Profile Privacy</h3>
+                        <div class="form-group">
+                            <label for="profile-visibility">Who can see my profile</label>
+                            <select id="profile-visibility">
+                                <option value="everyone">Everyone</option>
+                                <option value="community" selected>Community Members Only</option>
+                                <option value="private">Private (Only Me)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-visibility">Activity Visibility</label>
+                            <select id="activity-visibility">
+                                <option value="everyone">Everyone</option>
+                                <option value="community" selected>Community Members Only</option>
+                                <option value="private">Private (Only Me)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Health Data Privacy</h3>
+                        <p>Control how your health data is used and shared</p>
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Contribute to Research</h4>
+                                    <p>Allow anonymized data to be used for health research</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div>
+                                    <h4>Personalized Insights</h4>
+                                    <p>Use my data to generate personalized health insights</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management Tab -->
+                <div class="settings-tab" id="data">
+                    <h2>Data Management</h2>
+                    
+                    <div class="settings-card">
+                        <h3>Export Your Data</h3>
+                        <p>Download a copy of your data in various formats</p>
+                        <div class="export-options">
+                            <button class="btn btn-outline"><i class="fas fa-file-csv"></i> Export as CSV</button>
+                            <button class="btn btn-outline"><i class="fas fa-file-pdf"></i> Export as PDF</button>
+                            <button class="btn btn-outline"><i class="fas fa-file-code"></i> Export as JSON</button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Delete Data</h3>
+                        <div class="data-delete-options">
+                            <div class="delete-option">
+                                <div>
+                                    <h4>Clear Health Records</h4>
+                                    <p>Delete all your health tracking data</p>
+                                </div>
+                                <button class="btn btn-danger btn-small">Clear Data</button>
+                            </div>
+                            <div class="delete-option">
+                                <div>
+                                    <h4>Clear Community Activity</h4>
+                                    <p>Delete all your posts and comments</p>
+                                </div>
+                                <button class="btn btn-danger btn-small">Clear Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Actions Tab -->
+                <div class="settings-tab" id="account">
+                    <h2>Account Actions</h2>
+                    
+                    <div class="settings-card">
+                        <h3>Account Information</h3>
+                        <div class="form-group">
+                            <label for="account-email">Email Address</label>
+                            <input type="email" id="account-email" value="user@example.com">
+                        </div>
+                        <button class="btn btn-primary">Update Email</button>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Deactivate Account</h3>
+                        <p>Temporarily disable your account. You can reactivate it anytime by logging in.</p>
+                        <button class="btn btn-warning" id="deactivate-btn">Deactivate Account</button>
+                        
+                        <div class="confirmation-dialog hidden" id="deactivate-confirm">
+                            <p>Are you sure you want to deactivate your account? You can reactivate it anytime by logging in.</p>
+                            <div class="dialog-actions">
+                                <button class="btn btn-outline btn-small" id="deactivate-cancel">Cancel</button>
+                                <button class="btn btn-warning btn-small">Confirm Deactivation</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card danger-zone">
+                        <h3>Delete Account</h3>
+                        <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+                        <button class="btn btn-danger" id="delete-btn">Delete Account</button>
+                        
+                        <div class="confirmation-dialog hidden" id="delete-confirm">
+                            <p class="warning-text">This action is permanent and cannot be undone. All your data will be permanently deleted.</p>
+                            <div class="form-group">
+                                <label for="delete-confirm-password">Enter your password to confirm</label>
+                                <input type="password" id="delete-confirm-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="delete-reason">Why are you leaving? (Optional)</label>
+                                <select id="delete-reason">
+                                    <option value="">Select a reason</option>
+                                    <option value="not-useful">Not finding it useful</option>
+                                    <option value="privacy">Privacy concerns</option>
+                                    <option value="different-app">Using a different app</option>
+                                    <option value="other">Other reason</option>
+                                </select>
+                            </div>
+                            <div class="dialog-actions">
+                                <button class="btn btn-outline btn-small" id="delete-cancel">Cancel</button>
+                                <button class="btn btn-danger btn-small">Permanently Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+           const sidebar = document.querySelector('.sidebar');
+           
+           toggleButton.addEventListener('click', function() {
+               sidebar.classList.toggle('active');
+           });
+           
+           // Close sidebar when clicking outside of it (optional)
+           document.addEventListener('click', function(event) {
+               if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                   sidebar.classList.remove('active');
+               }
+           });
+            // Ensure sidebar is always visible on larger screens
+           window.addEventListener('resize', () => {
+           if (window.innerWidth > 768) {
+           sidebar.classList.remove('hidden');
+           sidebar.classList.remove('active');
+           } else {
+           sidebar.classList.add('hidden');
+           }
+   });
+       });
+   </script>
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

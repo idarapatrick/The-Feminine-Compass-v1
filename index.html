@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Feminine Compass</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="slider">
+            <div class="slide slide-1 active">
+                <div class="slide-content">
+                    <h1 class="slide-title">The Women's All-in-One Health Compass</h1>
+                    <p class="slide-subtitle">An AI-Powered web application for the enhancement of women's health literacy</p>
+                </div>
+            </div>
+            
+            <div class="slide slide-2">
+                <div class="slide-content">
+                    <h1 class="slide-title"> AI-Powered Health Insights</h1>
+                    <p class="slide-subtitle">Early detection and predictive insights for PCOS, Endometriosis, and Breast Cancer </p>
+                </div>
+            </div>
+            
+            <div class="slide slide-3">
+                <div class="slide-content">
+                    <h1 class="slide-title"> Start Your Wellness Voyage</h1>
+                    <p class="slide-subtitle">Embark On a Journey To Prioritize Holistic Health And Wellness From The Start</p>
+                </div>
+            </div>
+            
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button class="button" id="getStartedBtn">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="signInTab">Sign In</div>
+                <div class="auth-tab" id="signUpTab">Sign Up</div>
+            </div>
+            
+            <div class="auth-content active" id="signInContent">
+                <p>Welcome back! Please sign in to continue.</p>
+                <button class="auth-button" id="goToSignIn">Continue to Sign In</button>
+            </div>
+            
+            <div class="auth-content" id="signUpContent">
+                <p>Create an account to get started with your wellness journey.</p>
+                <button class="auth-button" id="goToSignUp">Continue to Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

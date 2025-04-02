@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Community | The Feminine Compass</title>
+    <link rel="stylesheet" href="/src/css/community.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Feminine Compass</h1>
+        </div>
+        <button class="mobile-sidebar-toggle">☰</button>
+         <!-- Sidebar Navigation -->
+         <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Feminine Compass</h2>
+            </div>
+            
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <main class="community-container">
+        <section class="community-header">
+            <h2>Community Forum</h2>
+            <p><mark>Connect with others, share experiences, and find support for your health journey.</mark></p>
+        </section>
+
+        <section class="forum-content">
+            <div class="discussion-list">
+                <div class="discussion-item">
+                    <img class="avatar" src="/assets/images/profile-avatar(1).jpg" alt="User Avatar">
+                    <div class="discussion-details">
+                        <h4><a href="#">Has anyone tried cycle syncing their workouts?</a></h4>
+                        <p>I've been reading about aligning workouts with different phases of my cycle...</p>
+                        <div class="discussion-meta">
+                            <span>Posted by Maven Asuquo on Mar 30, 2025</span> | 
+                            <i class="fas fa-eye"></i> 2.1k views |
+                            <i class="fas fa-comment"></i> 45 replies
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="forum-content">
+            <div class="discussion-list">
+                <div class="discussion-item">
+                    <img class="avatar" src="/assets/images/profile-avatar(2).jpg" alt="User Avatar">
+                    <div class="discussion-details">
+                        <h4><a href="#">Anyone been to the doctor recently?</a></h4>
+                        <p>Just got my health insights and it indicates I may likely have early stages of PCOS...</p>
+                        <div class="discussion-meta">
+                            <span>Posted by Inyene R. on Mar 22, 2025</span> | 
+                            <i class="fas fa-eye"></i> 1.1k views |
+                            <i class="fas fa-comment"></i> 35 replies
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>  
+
+        <section class="forum-content">
+            <div class="discussion-list">
+                <div class="discussion-item">
+                    <img class="avatar" src="/assets/images/profile-avatar(1).jpg" alt="User Avatar">
+                    <div class="discussion-details">
+                        <h4><a href="#">I just hit my weight loss goal!</a></h4>
+                        <p>Set a target to loose 5 pounds in 3 months and I just did!...</p>
+                        <div class="discussion-meta">
+                            <span>Posted by Enobong Sylvester on Feb 4, 2025</span> | 
+                            <i class="fas fa-eye"></i> 400 views |
+                            <i class="fas fa-comment"></i> 15 replies
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>  
+
+        <section class="forum-content">
+            <div class="discussion-list">
+                <div class="discussion-item">
+                    <img class="avatar" src="/assets/images/profile-avatar(1).jpg" alt="User Avatar">
+                    <div class="discussion-details">
+                        <h4><a href="#">I just discovered this healthy protein shake</a></h4>
+                        <p>I've been looking for a way to gain halthy weight and I just discovered...</p>
+                        <div class="discussion-meta">
+                            <span>Posted by Sylvia Iradukunda on Jan 12, 2025</span> | 
+                            <i class="fas fa-eye"></i> 5.1k views |
+                            <i class="fas fa-comment"></i> 145 replies
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

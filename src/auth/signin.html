@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/src/css/auth.css">
+</head>
+<body>
+    <div class="ambient-light"></div>
+
+    <div class="auth-container">
+        <h1>Welcome Back</h1>
+        <div class="auth-form">
+            <div class="alert-message" id="errorMessage"></div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button id="signInButton" class="auth-button">Sign In</button>
+            <div class="auth-links">
+                <p>Don't have an account? <a href="dashboard.html">Sign Up</a></p>
+            </div>/s
+        </div>
+    </div>
+
+    <script src="./signin.js"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tracking | HealthTrack</title>
+    <link rel="stylesheet" href="/src/css/health-tracking.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Feminine Compass</h1>
+        </div>
+        <button class="mobile-sidebar-toggle">☰</button>
+         <!-- Sidebar Navigation -->
+         <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Feminine Compass</h2>
+            </div>
+            
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <main class="tracking-container">
+        <section class="tracking-header">
+            <h2>Health Tracking</h2>
+            <p>Track your health metrics to gain personalized insights and take control of your well-being.</p>
+        </section>
+
+        <section class="calendar-section">
+            <h3>Your Cycle Calendar</h3>
+            <div class="month-selector">
+                <button class="month-nav"><i class="fas fa-chevron-left"></i></button>
+                <h4>April 2025</h4>
+                <button class="month-nav"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar">
+                <div class="calendar-weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="calendar-days">
+                    <div class="prev-month">30</div>
+                    <div class="prev-month">31</div>
+                    <div>1</div>
+                    <div class="today">2</div>
+                    <div class="predicted-period">3</div>
+                    <div class="predicted-period">4</div>
+                    <div class="predicted-period">5</div>
+                    <div class="predicted-period">6</div>
+                    <div class="predicted-period">7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div class="fertile-window">16</div>
+                    <div class="fertile-window">17</div>
+                    <div class="fertile-window">18</div>
+                    <div class="fertile-window">19</div>
+                    <div class="fertile-window">20</div>
+                    <div>21</div>
+                    <div>22</div>
+                    <div>23</div>
+                    <div>24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div>27</div>
+                    <div>28</div>
+                    <div>29</div>
+                    <div>30</div>
+                    <div class="next-month">1</div>
+                    <div class="next-month">2</div>
+                    <div class="next-month">3</div>
+                </div>
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-color period"></span>
+                    <span>Period</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color predicted-period"></span>
+                    <span>Predicted Period</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color fertile-window"></span>
+                    <span>Fertile Window</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color today"></span>
+                    <span>Today</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-log">
+            <div class="log-header">
+                <h3>Daily Health Log</h3>
+                <div class="date-display">
+                    <button class="date-nav"><i class="fas fa-chevron-left"></i></button>
+                    <h4>April 2, 2025</h4>
+                    <button class="date-nav"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <form class="log-form">
+                <div class="tracking-category">
+                    <h4>Cycle</h4>
+                    <div class="tracking-options">
+                        <div class="option-btn">
+                            <input type="checkbox" id="period" name="cycle">
+                            <label for="period">Period</label>
+                        </div>
+                        <div class="option-btn">
+                            <input type="checkbox" id="spotting" name="cycle">
+                            <label for="spotting">Spotting</label>
+                        </div>
+                    </div>
+                    <div class="flow-slider">
+                        <label for="flow">Flow Intensity:</label>
+                        <input type="range" id="flow" min="1" max="5" value="3">
+                        <div class="range-labels">
+                            <span>Light</span>
+                            <span>Heavy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracking-category">
+                    <h4>Symptoms</h4>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="cramps" name="symptoms">
+                            <label for="cramps">Cramps</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="headache" name="symptoms">
+                            <label for="headache">Headache</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="bloating" name="symptoms">
+                            <label for="bloating">Bloating</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="backache" name="symptoms">
+                            <label for="backache">Backache</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="fatigue" name="symptoms">
+                            <label for="fatigue">Fatigue</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="breakouts" name="symptoms">
+                            <label for="breakouts">Breakouts</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="nausea" name="symptoms">
+                            <label for="nausea">Nausea</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="cravings" name="symptoms">
+                            <label for="cravings">Cravings</label>
+                        </div>
+                        <div class="symptom-item add-symptom">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Custom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracking-category">
+                    <h4>Mood</h4>
+                    <div class="mood-slider">
+                        <input type="range" id="mood" min="1" max="5" value="3">
+                        <div class="mood-labels">
+                            <span><i class="far fa-sad-tear"></i></span>
+                            <span><i class="far fa-frown"></i></span>
+                            <span><i class="far fa-meh"></i></span>
+                            <span><i class="far fa-smile"></i></span>
+                            <span><i class="far fa-grin-beam"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracking-category">
+                    <h4>Energy Level</h4>
+                    <div class="energy-slider">
+                        <input type="range" id="energy" min="1" max="5" value="3">
+                        <div class="range-labels">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracking-category">
+                    <h4>Sleep</h4>
+                    <div class="sleep-inputs">
+                        <div class="form-group">
+                            <label for="sleepDuration">Duration:</label>
+                            <input type="number" id="sleepDuration" min="0" max="24" step="0.5" value="7.5"> hours
+                        </div>
+                        <div class="form-group">
+                            <label for="sleepQuality">Quality:</label>
+                            <select id="sleepQuality">
+                                <option value="poor">Poor</option>
+                                <option value="fair">Fair</option>
+                                <option value="good" selected>Good</option>
+                                <option value="excellent">Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracking-category">
+                    <h4>Notes</h4>
+                    <textarea id="dailyNotes" placeholder="Add any additional notes about your day..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">Save Log</button>
+                    <button type="reset" class="secondary-btn">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="quick-insights">
+            <h3>Quick Insights</h3>
+            <div class="insight-cards">
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="insight-content">
+                        <h4>Next Period</h4>
+                        <p>Predicted to start in <strong>1 day</strong></p>
+                        <p class="insight-date">April 3, 2025</p>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="insight-content">
+                        <h4>Cycle Length</h4>
+                        <p>Your average: <strong>28 days</strong></p>
+                        <p class="insight-detail">Last 3 cycles: 28, 29, 27 days</p>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="insight-content">
+                        <h4>Trending Symptoms</h4>
+                        <p>Frequent <strong>headaches</strong> 2 days before period</p>
+                        <a href="insights.html" class="insight-link">View Analysis</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="insights.html" class="view-more-link">View All Insights <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass </h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Calendar day selection
+        document.querySelectorAll('.calendar-days div').forEach(day => {
+            day.addEventListener('click', function() {
+                // Remove selected class from all days
+                document.querySelectorAll('.calendar-days div').forEach(d => {
+                    d.classList.remove('selected-day');
+                });
+                
+                // Add selected class to clicked day
+                this.classList.add('selected-day');
+                
+                // Update the displayed date in the daily log section
+                // This would be expanded in a real application
+                document.querySelector('.date-display h4').textContent = 'April ' + this.textContent + ', 2025';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+             // Ensure sidebar is always visible on larger screens
+            window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.remove('active');
+            } else {
+            sidebar.classList.add('hidden');
+            }
+            });
+        });
+    </script>
+</body>
+</html>

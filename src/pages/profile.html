@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="/src/css/profile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Feminine Compass</h1>
+        </div>
+        <button class="mobile-sidebar-toggle">☰</button>
+         <!-- Sidebar Navigation -->
+         <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>Feminine Compass</h2>
+            </div>
+            
+            <div class="nav-links">
+                <li class="active"><a href="dashboard.html"><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="health-tracking.html"><span class="icon">📝</span> Health Tracking</a></li>
+                <li><a href="insights.html"><span class="icon">💡</span> Insights</a></li>
+                <li><a href="community.html"><span class="icon">👥</span> Community</a></li>
+                <li><a href="resources.html"><span class="icon">📚</span> Resources</a></li>
+                <li><a href="profile.html"><span class="icon">👤</span> Profile</a></li>
+                <li><a href="settings.html"><span class="icon">👤</span> Settings</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-header">
+            <div class="profile-image">
+                <img src="/assets/images/profile-avatar(1).jpg" alt="Profile Picture">
+                <button class="edit-photo-btn"><i class="fas fa-camera"></i> Change Photo</button>
+            </div>
+            <div class="profile-info">
+                <h2>Jane Doe</h2>
+                <p class="bio">Health enthusiast focused on holistic wellness and preventative care.</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="value">45</span>
+                        <span class="label">Days Tracked</span>
+                    </div>
+                    <div class="stat">
+                        <span class="value">3</span>
+                        <span class="label">Insights</span>
+                    </div>
+                    <div class="stat">
+                        <span class="value">8</span>
+                        <span class="label">Community Posts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-details">
+            <div class="section-header">
+                <h3>Personal Information</h3>
+                <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+            </div>
+            <div class="profile-form">
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" value="Jane Doe" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="jane.doe@example.com" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" value="1990-05-15" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="(555) 123-4567" disabled>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="health-history">
+            <div class="section-header">
+                <h3>Health History</h3>
+                <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+            </div>
+            <div class="health-form">
+                <form id="health-form">
+                    <div class="form-group">
+                        <label for="cycleLength">Average Cycle Length</label>
+                        <input type="number" id="cycleLength" value="28" disabled> days
+                    </div>
+                    <div class="form-group">
+                        <label for="periodLength">Average Period Length</label>
+                        <input type="number" id="periodLength" value="5" disabled> days
+                    </div>
+                    <div class="form-group">
+                        <label for="conditions">Pre-existing Conditions</label>
+                        <textarea id="conditions" disabled>None reported</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medications">Current Medications</label>
+                        <textarea id="medications" disabled>Multivitamin, Daily</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Allergies</label>
+                        <textarea id="allergies" disabled>Penicillin</textarea>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="preferences">
+            <div class="section-header">
+                <h3>Preferences</h3>
+                <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+            </div>
+            <div class="preferences-form">
+                <form id="preferences-form">
+                    <div class="form-group">
+                        <label for="notificationPref">Notification Preferences</label>
+                        <div class="checkbox-group" disabled>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emailNotif" checked disabled>
+                                <label for="emailNotif">Email Notifications</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pushNotif" checked disabled>
+                                <label for="pushNotif">Push Notifications</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="reminderNotif" checked disabled>
+                                <label for="reminderNotif">Health Reminders</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="privacyPref">Privacy Preferences</label>
+                        <div class="radio-group" disabled>
+                            <div class="radio-item">
+                                <input type="radio" id="privacyPublic" name="privacy" disabled>
+                                <label for="privacyPublic">Public Profile</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="privacyLimited" name="privacy" checked disabled>
+                                <label for="privacyLimited">Limited Visibility</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="privacyPrivate" name="privacy" disabled>
+                                <label for="privacyPrivate">Private Profile</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Feminine Compass</h3>
+                <p>Empowering women through health tracking and insights.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="health-tracking.html">Track Health</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feminine Compass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle form editing
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const section = this.closest('section');
+                const inputs = section.querySelectorAll('input, textarea');
+                
+                inputs.forEach(input => {
+                    input.disabled = !input.disabled;
+                });
+                
+                if (inputs[0].disabled) {
+                    this.innerHTML = '<i class="fas fa-edit"></i> Edit';
+                } else {
+                    this.innerHTML = '<i class="fas fa-save"></i> Save';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+             // Ensure sidebar is always visible on larger screens
+            window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.remove('active');
+            } else {
+            sidebar.classList.add('hidden');
+            }
+    });
+});
+    </script>
+</body>
+</html>
