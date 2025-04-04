@@ -45,15 +45,15 @@ body {
 }
 
 .slide-1 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-1.jpeg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/src/assets/images/image-carousel-1.jpeg");
 }
 
 .slide-2 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-2(I).jpeg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/src/assets/images/image-carousel-2.jpeg");
 }
 
 .slide-3 {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/assets/images/image-carousel-3.jpeg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("/src/assets/images/image-carousel-3.jpeg");
 }
 
 .slide-content {

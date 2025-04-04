@@ -11,23 +11,23 @@
 
     <div class="auth-container">
         <h1>Welcome Back</h1>
-        <div class="auth-form">
+        <form id="signInForm" class="auth-form">
             <div class="alert-message" id="errorMessage"></div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
+                <input type="password" id="password" placeholder="Enter your password" required>
             </div>
-            <button id="signInButton" class="auth-button">Sign In</button>
+            <button type="submit" id="signInButton" class="auth-button">Sign In</button>
             <div class="auth-links">
-                <p>Don't have an account? <a href="/src/pages/dashboard.html">Sign Up</a></p>
+                <p>Don't have an account? <a href="/src/auth/signup.html">Sign Up</a></p>
             </div>
-        </div>
+        </form>
     </div>
 
-    <script src="./signin.js"></script>
+    <script type="module" src="/src/js/signin.js"></script>
 </body>
 </html>

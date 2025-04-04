@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs
+// Import needed functions from the SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 import { 
@@ -23,15 +23,15 @@ import {
     serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBYjdUbbYY8CssJ_gIf35sO2H9z90BKALI",
-    authDomain: "the-feminine-compass.firebaseapp.com",
-    projectId: "the-feminine-compass",
-    storageBucket: "the-feminine-compass.appspot.com",
-    messagingSenderId: "1043749795698",
-    appId: "1:1043749795698:web:2075c3bdfdedd9ff17cfeb",
-    measurementId: "G-G750NE6WCR"
+    apiKey: "AIzaSyCJil5BaOZWyAw3gcL6X1STAIWhThQ0mJY",
+    authDomain: "feminine-compass.firebaseapp.com",
+    projectId: "feminine-compass",
+    storageBucket: "feminine-compass.firebasestorage.app",
+    messagingSenderId: "460804413422",
+    appId: "1:460804413422:web:89220dd37821b29bc7e0ff",
+    measurementId: "G-H342JXDZ3S"
 };
 
 // Initialize Firebase
@@ -40,15 +40,28 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Check authentication state
+// Check authentication state 
 function initAuthStateListener() {
     onAuthStateChanged(auth, async (user) => {
+        // Get the current page path
+        const currentPath = window.location.pathname;
+        
         if (user) {
             console.log("User authenticated:", user.uid);
-            window.location.href = '/src/pages/dashboard.html';
+            
+            // If on a login/signup page, redirect to dashboard
+            if (currentPath.includes('signin.html') || currentPath.includes('signup.html') || currentPath === '/' || currentPath === '/index.html') {
+                window.location.href = '/src/pages/dashboard.html';
+            }
         } else {
             console.log("No user authenticated");
-            window.location.href = '/signin.html';
+            
+            // Only redirect to signin if attempting to access protected pages
+            if (currentPath.includes('dashboard.html') || currentPath.includes('profile.html') || 
+                currentPath.includes('settings.html') || 
+                (currentPath.startsWith('/src/pages/') && !currentPath.includes('signin.html') && !currentPath.includes('signup.html'))) {
+                window.location.href = '/signin.html';
+            }
         }
     });
 }
