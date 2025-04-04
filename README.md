@@ -41,15 +41,21 @@ For easier access, you can add a shortcut to The Feminine Compass on your deskto
 1. Open Chrome and visit The Feminine Compass.
 2. Tap the three-dot menu in the top-right corner.
 3. Select Add to Home screen.
-4. Rename it if needed and tap Add.
-5. The shortcut will appear on your home screen.
+   ![alt image](/src/assets/images/Mobile1.png)
+5. Rename it if needed and tap Add.
+   ![alt image](/src/assets/images/mobile2.png)
+7. The shortcut will appear on your home screen.
+   ![alt image](/src/assets/images/mobile3.png)
 
 #### On iPhone (Safari Browser)
 1. Open Safari and go to The Feminine Compass.
 2. Tap the Share icon (bottom center of the screen).
 3. Scroll down and select Add to Home Screen.
-4. Name it and tap Add.
-5. The shortcut will now be on your home screen.
+   ![alt image](/src/assets/images/safari1.png)
+5. Name it and tap Add.
+   ![alt images](/src/assets/images/safari2.png)
+7. The shortcut will now be on your home screen.
+   ![alt image](/src/assets/images/safari3.png)
 
 ## 3. Creating an Account (Sign-Up Process)
 To get the best experience, new users should create an account.
