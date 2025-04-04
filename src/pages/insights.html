@@ -537,7 +537,7 @@
                 sidebar.classList.toggle('active');
             });
             
-            // Close sidebar when clicking outside of it (optional)
+            // Close sidebar when clicking outside of it 
             document.addEventListener('click', function(event) {
                 if (!sidebar.contains(event.target) && !toggleButton.contains(event.target) && sidebar.classList.contains('active')) {
                     sidebar.classList.remove('active');

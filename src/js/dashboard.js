@@ -449,8 +449,6 @@ function displaySampleResources(container) {
 
 // Show detailed view of a specific resource
 function showResourceDetails(resourceId) {
-    // In a real implementation, fetch specific resource details
-    // and display them in a modal or dedicated page
     console.log(`Showing details for resource: ${resourceId}`);
     
     // Example implementation with a modal
